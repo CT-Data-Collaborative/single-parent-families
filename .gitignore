@@ -1,0 +1,7 @@
+*.pyc
+.cache/
+venv/
+env/
+.DS_Store
+.idea/
+.Rproj.user

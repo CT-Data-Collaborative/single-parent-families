@@ -1,0 +1,39 @@
+Married Couple Family
+  with own children of the householder under 18 years
+    under 6 only
+    under 6 years and 6-17 years 
+    6-17 only
+  no own children of the householder under 18 years
+Other Family  
+  male householder, no wife
+    with own children of the householder under 18 years
+      under 6 only
+      under 6 years and 6-17 years 
+      6-17 only
+    no own children of the householder under 18 years
+  female householder, no husband
+    with own children of the householder under 18 years
+      under 6 only
+      under 6 years and 6-17 years 
+      6-17 only 
+    no own children of the householder under 18 years  
+
+"Total Families" = "Married Couple Family" + "Other Family"
+"Total Families, own children" = "Married Couple Family, with own children of the householder under 18 years" + "Single parent, own children"
+"Total Families, no own children" = "Married Couple Family, no own children of the householder under 18 years" + "Single parent, no own children" 
+
+"Married couple, own children" = "Married Couple Family, with own children of the householder under 18 years"
+"Married couple, no own children" = "Married Couple Family, no own children of the householder under 18 years"
+"Single parent, own children" = "Other Family, male householder, no wife, with own children of the householder under 18 years" +
+                                "Other Family, female householder, no husband, with own children of the householder under 18 years"
+"Single parent, no own children" = "Other Family, male householder, no wife, no own children of the householder under 18 years" + 
+                                   "Other Family, female householder, no husband, no own children of the householder under 18 years"
+
+Percent families, married couples = "Married Couple Family" / "Total Families"
+Percent families, married couples, no own children = "Married couple, no children" / "Total Families"
+Percent families, married couples, own children = "Married couple, children" / "Total Families"
+Percent families, single-parents = "Other Family" / "Total Families"
+Percent families, single-parents, no own children = "Single parent, no own children" / "Total Families"
+Percent families, single-parents, own children = "Single parent, own children" / "Total Families" (Single Parent Families)
+  
+  
