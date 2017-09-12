@@ -1,7 +1,10 @@
 Single Parent Families
 
 [![Build Status](https://travis-ci.org/CT-Data-Collaborative/single-parent-families.svg?branch=master)](https://travis-ci.org/CT-Data-Collaborative/single-parent-families)
+
 Single-parent Families reports the percent of families with children that are headed by a single parent, per race/ethnicity 
+
+Data Source: U.S. Census ACS 5-Year Estimates Table B11003
 
 ## License MIT
 
