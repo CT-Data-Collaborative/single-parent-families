@@ -67,12 +67,11 @@ sp_families_wide_calc <- sp_families_wide %>%
                                                                                       `Total Families Value`, 
                                                                                       `Total Single-Parent Families without Children of Their Own MOE`, 
                                                                                       `Total Families MOE`)),
-  
          `% Families, Single-parent, with Children of Their Own` = ((`Total Single-Parent Families with Children of Their Own Value` / `Total Families Value`)*100),
          `MOE of % Families, Single-parent, with Children of Their Own` = (calcMOE(`Total Single-Parent Families with Children of Their Own Value`, 
-                                                                     `Total Families Value`, 
-                                                                     `Total Single-Parent Families with Children of Their Own MOE`, 
-                                                                     `Total Families MOE`)))
+                                                                                   `Total Families Value`, 
+                                                                                   `Total Single-Parent Families with Children of Their Own MOE`, 
+                                                                                   `Total Families MOE`)))
 options(scipen=999)
 
 sp_families_long <- gather(sp_families_wide_calc, Group, Value, 4:21, factor_key = FALSE)
@@ -105,7 +104,4 @@ write.table(
   sep = ",",
   row.names = F
 )
-
-
-
 

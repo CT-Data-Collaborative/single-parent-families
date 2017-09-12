@@ -53,8 +53,8 @@
           "constraints": {
             "enum": [
               "All", 
-              "Related", 
-              "Not Related"
+              "Own Children", 
+              "No Own Children"
             ]
          }
         }, {             
@@ -184,224 +184,218 @@
         "Measure Type": "Number", 
         "Variable": "Single-Parent Families", 
         "Family Type": "Single-Parent", 
-        "Child Relation": ["All", "Related", "Not Related"]
+        "Child Relation": ["All", "Own Children", "No Own Children"]
       },
       "type": "object"
     } 
   },
   "spot_checks": [
-{
-  "type": "$lookup",
-  "filter": {
-    "Town": "Bridgewater",
-    "Year":	"2011-2015",
-    "Variable":	"Single-Parent Families",
-    "Measure Type":	"Number",
-    "Family Type": "All", 
-    "Child Relation": "All"
-  },
-  "expected": {
-    "type": "$match",
-    "number type": "int",
-    "value": 
-  } 
-},
-{
-  "type": "$lookup",
-  "filter": {
-    "Town": "Union",
-    "Year":	"2006-2010",
-    "Variable":	"Margins of Error",
-    "Measure Type":	"Percent",
-    "Family Type": "All", 
-    "Child Relation": "All"
-  },
-  "expected": {
-    "type": "$match",
-    "number type": "float",
-    "value": 
-  } 
-},
-{
-  "type": "$lookup",
-  "filter": {
-    "Town": "Franklin",
-    "Year":	"2008-2012",
-    "Variable":	"Margins of Error",
-    "Measure Type":	"Number",
-    "Family Type": "Single-Parent", 
-    "Child Relation": "All"
-  },
-  "expected": {
-    "type": "$match",
-    "number type": "int",
-    "value": 
-  } 
-},
-{
-  "type": "$lookup",
-  "filter": {
-    "Town": "Canaan",
-    "Year":	"2008-2012",
-    "Variable":	"Single-Parent Families",
-    "Measure Type":	"Percent",
-    "Family Type": "Single-Parent", 
-    "Child Relation": "All"
-  },
-  "expected": {
-    "type": "$match",
-    "number type": "int",
-    "value": 
-  } 
-},
-{
-  "type": "$lookup",
-  "filter": {
-    "Town": "Sharon",
-    "Year":	"2006-2010",
-    "Variable":	"Margins of Error",
-    "Measure Type":	"Number",
-    "Family Type": "All", 
-    "Child Relation": "Not Related"
-  },
-  "expected": {
-    "type": "$match",
-    "number type": "int",
-    "value": 
-  } 
-},
-{
-  "type": "$lookup",
-  "filter": {
-    "Town": "Colebrook",
-    "Year":	"2009-2013",
-    "Variable":	"Single-Parent Families",
-    "Measure Type":	"Number",
-    "Family Type": "All", 
-    "Child Relation": "Not Related"
-  },
-  "expected": {
-    "type": "$match",
-    "number type": "int",
-    "value": 
-  } 
-},
-{
-  "type": "$lookup",
-  "filter": {
-    "Town": "Hartland",
-    "Year":	"2007-2011",
-    "Variable":	"Margins of Error",
-    "Measure Type":	"Percent",
-    "Family Type": "Single-Parent", 
-    "Child Relation": "Not Related"
-  },
-  "expected": {
-    "type": "$match",
-    "number type": "float",
-    "value": 
-  } 
-},
-{
-  "type": "$lookup",
-  "filter": {
-    "Town": "Cornwall",
-    "Year":	"2009-2013",
-    "Variable":	"Single-Parent Families",
-    "Measure Type":	"Percent",
-    "Family Type": "Single-Parent", 
-    "Child Relation": "Not Related"
-  },
-  "expected": {
-    "type": "$match",
-    "number type": "float",
-    "value": 
-  } 
-},
-{
-  "type": "$lookup",
-  "filter": {
-    "Town": "Norfolk",
-    "Year":	"2010-2014",
-    "Variable":	"Margins of Error",
-    "Measure Type":	"Percent",
-    "Family Type": "All", 
-    "Child Relation": "Related"
-  },
-  "expected": {
-    "type": "$match",
-    "number type": "float",
-    "value": 
-  } 
-},
-{
-  "type": "$lookup",
-  "filter": {
-    "Town": "Roxbury",
-    "Year":	"2011-2015",
-    "Variable":	"Single-Parent Families",
-    "Measure Type":	"Percent",
-    "Family Type": "All", 
-    "Child Relation": "Related"
-  },
-  "expected": {
-    "type": "$match",
-    "number type": "float",
-    "value": 
-  } 
-},
-{
-  "type": "$lookup",
-  "filter": {
-    "Town": "Warren",
-    "Year":	"2007-2011",
-    "Variable":	"Margins of Error",
-    "Measure Type":	"Number",
-    "Family Type": "Single-Parent", 
-    "Child Relation": "Related"
-  },
-  "expected": {
-    "type": "$match",
-    "number type": "int",
-    "value": 
-  } 
-},
-{
-  "type": "$lookup",
-  "filter": {
-    "Town": "Eastford",
-    "Year":	"2010-2014",
-    "Variable":	"Single-Parent Families",
-    "Measure Type":	"Number",
-    "Family Type": "Single-Parent", 
-    "Child Relation": "Related"
-  },
-  "expected": {
-    "type": "$match",
-    "number type": "int",
-    "value": 
-  } 
-}
-  ],
-  "dimension_groups": [
     {
-      "Measure Type": [
-        "Number", 
-        "Percent"
-      ],
-      "Variable": [
-        "Single-Parent Families", 
-        "Margins of Error"
-      ], 
-      "Family Type": [
-        "All", 
-        "Single-Parent"
-      ], 
-      "Child Relation": [
-        "All", 
-        "Related", 
-        "Not Related"
-      ]
+      "type": "$lookup",
+      "filter": {
+        "Town": "Bridgewater",
+        "Year":	"2011-2015",
+        "Variable":	"Single-Parent Families",
+        "Measure Type":	"Number",
+        "Family Type": "All", 
+        "Child Relation": "All"
+      },
+      "expected": {
+        "type": "$match",
+        "number type": "int",
+        "value": 514
+      } 
+    },
+    {
+      "type": "$lookup",
+      "filter": {
+        "Town": "Union",
+        "Year":	"2006-2010",
+        "Variable":	"Margins of Error",
+        "Measure Type":	"Percent",
+        "Family Type": "Single-Parent", 
+        "Child Relation": "All"
+      },
+      "expected": {
+        "type": "$match",
+        "number type": "float",
+        "value": 0.1
+      } 
+    },
+    {
+      "type": "$lookup",
+      "filter": {
+        "Town": "Franklin",
+        "Year":	"2008-2012",
+        "Variable":	"Margins of Error",
+        "Measure Type":	"Number",
+        "Family Type": "Single-Parent", 
+        "Child Relation": "All"
+      },
+      "expected": {
+        "type": "$match",
+        "number type": "int",
+        "value": 24
+      } 
+    },
+    {
+      "type": "$lookup",
+      "filter": {
+        "Town": "Canaan",
+        "Year":	"2008-2012",
+        "Variable":	"Single-Parent Families",
+        "Measure Type":	"Percent",
+        "Family Type": "Single-Parent", 
+        "Child Relation": "All"
+      },
+      "expected": {
+        "type": "$match",
+        "number type": "float",
+        "value": 20.97
+      } 
+    },
+    {
+      "type": "$lookup",
+      "filter": {
+        "Town": "Sharon",
+        "Year":	"2006-2010",
+        "Variable":	"Margins of Error",
+        "Measure Type":	"Number",
+        "Family Type": "All", 
+        "Child Relation": "No Own Children"
+      },
+      "expected": {
+        "type": "$match",
+        "number type": "float",
+        "value": 114.50
+      } 
+    },
+    {
+      "type": "$lookup",
+      "filter": {
+        "Town": "Colebrook",
+        "Year":	"2009-2013",
+        "Variable":	"Single-Parent Families",
+        "Measure Type":	"Number",
+        "Family Type": "All", 
+        "Child Relation": "No Own Children"
+      },
+      "expected": {
+        "type": "$match",
+        "number type": "int",
+        "value": 289.00
+      } 
+    },
+    {
+      "type": "$lookup",
+      "filter": {
+        "Town": "Hartland",
+        "Year":	"2007-2011",
+        "Variable":	"Margins of Error",
+        "Measure Type":	"Percent",
+        "Family Type": "Single-Parent", 
+        "Child Relation": "No Own Children"
+      },
+      "expected": {
+        "type": "$match",
+        "number type": "float",
+        "value": 0.03
+      } 
+    },
+    {
+      "type": "$lookup",
+      "filter": {
+        "Town": "Cornwall",
+        "Year":	"2009-2013",
+        "Variable":	"Single-Parent Families",
+        "Measure Type":	"Percent",
+        "Family Type": "Single-Parent", 
+        "Child Relation": "No Own Children"
+      },
+      "expected": {
+        "type": "$match",
+        "number type": "float",
+        "value": 9.40
+      } 
+    },
+    {
+      "type": "$lookup",
+      "filter": {
+        "Town": "Norfolk",
+        "Year":	"2010-2014",
+        "Variable":	"Margins of Error",
+        "Measure Type":	"Percent",
+        "Family Type": "Single-Parent", 
+        "Child Relation": "Own Children"
+      },
+      "expected": {
+        "type": "$match",
+        "number type": "float",
+        "value": 0.06
+      } 
+    },
+    {
+      "type": "$lookup",
+      "filter": {
+        "Town": "Roxbury",
+        "Year":	"2011-2015",
+        "Variable":	"Single-Parent Families",
+        "Measure Type":	"Number",
+        "Family Type": "All", 
+        "Child Relation": "Own Children"
+      },
+      "expected": {
+        "type": "$match",
+        "number type": "float",
+        "value": 230
+      } 
+    },
+    {
+      "type": "$lookup",
+      "filter": {
+        "Town": "Warren",
+        "Year":	"2007-2011",
+        "Variable":	"Margins of Error",
+        "Measure Type":	"Number",
+        "Family Type": "Single-Parent", 
+        "Child Relation": "Own Children"
+      },
+      "expected": {
+        "type": "$match",
+        "number type": "float",
+        "value": 92.44
+      } 
+    },
+    {
+      "type": "$lookup",
+      "filter": {
+        "Town": "Eastford",
+        "Year":	"2010-2014",
+        "Variable":	"Single-Parent Families",
+        "Measure Type":	"Number",
+        "Family Type": "Single-Parent", 
+        "Child Relation": "Own Children"
+      },
+      "expected": {
+        "type": "$match",
+        "number type": "int",
+        "value": 26
+      } 
+    }
+  ],
+  "dimension_groups" : [
+    {
+      "Family Type": ["All"],
+      "Measure Type": ["Number"],
+      "Variable": ["Single-Parent Families", "Margins of Error"], 
+      "Child Relation": ["All", "Own Children", "No Own Children"]
+    },
+    {
+      "Family Type": ["Single-Parent"],
+      "Measure Type": ["Number", "Percent"],
+      "Variable": ["Single-Parent Families", "Margins of Error"], 
+      "Child Relation": ["All", "Own Children", "No Own Children"]
     }
   ]
 }
+
