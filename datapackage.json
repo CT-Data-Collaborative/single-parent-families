@@ -15,13 +15,13 @@
     "web": ""
   }],
   "author":[{
-    "name": "Jenna Daly",
-    "email": "jdaly@ctdata.org",
+    "name": "Connecticut Data Collaborative",
+    "email": "info@ctdata.org",
     "web": "http://ctdata.org"
   }],
   "contributor": [],
   "resources": [{
-    "path": "data/single_parent_families_2016.csv",
+    "path": "data/single_parent_families_2017.csv",
     "format": "csv",
     "schema": {
       "fields": [{
@@ -42,28 +42,28 @@
           "dimension": true,
           "constraints": {
             "enum": [
-              "All", 
+              "All",
               "Single-Parent"
             ]
          }
-        }, {   
+        }, {
           "name": "Child Relation",
           "type": "string",
           "dimension": true,
           "constraints": {
             "enum": [
-              "All", 
-              "Own Children", 
+              "All",
+              "Own Children",
               "No Own Children"
             ]
          }
-        }, {             
+        }, {
           "name": "Measure Type",
           "type": "string",
           "dimension": true,
           "constraints": {
             "enum": [
-              "Number", 
+              "Number",
               "Percent"
             ]
          }
@@ -73,7 +73,7 @@
           "dimension": true,
           "constraints": {
             "enum": [
-              "Single-Parent Families", 
+              "Single-Parent Families",
               "Margins of Error"
             ]
          }
@@ -85,7 +85,7 @@
       }
     }
   ],
-  "last_modified": "12/07/2017",
+  "last_modified": "01/22/2019",
   "ckan_extras": {
     "full_description": {
       "ckan_name": "Full Description",
@@ -116,7 +116,7 @@
       "ckan_name": "Socrata Dataset Name",
       "value": "",
       "type": "string"
-    }, 
+    },
     "domain": {
       "ckan_name": "Domain",
       "value": "Demographics",
@@ -136,7 +136,7 @@
       "ckan_name": "Denominator",
       "value": "Total number of Families",
       "type": "string"
-    },    
+    },
     "geography": {
       "ckan_name": "Geography",
       "value": "Town",
@@ -150,12 +150,12 @@
     },
     "years_in_catalog": {
       "ckan_name": "Years in Catalog",
-      "value": ["2006-2010", "2007-2011", "2008-2012", "2009-2013", "2010-2014", "2011-2015", "2012-2016"],
+      "value": ["2006-2010", "2007-2011", "2008-2012", "2009-2013", "2010-2014", "2011-2015", "2012-2016", "2013-2017"],
       "type": "array"
     },
     "latest_year": {
       "ckan_name": "Latest Year Available",
-      "value": "2012-2016",
+      "value": "2013-2017",
       "type": "string"
     },
     "disabled_views": {
@@ -175,19 +175,19 @@
       "ckan_name": "Expected Number of Unique Geographies",
       "value": 170,
       "type": "string"
-    },     
-    "default": {      
+    },
+    "default": {
       "ckan_name": "Default",
       "value": {
         "Town": "Connecticut",
-        "Year": ["2012-2016"],
-        "Measure Type": "Number", 
-        "Variable": "Single-Parent Families", 
-        "Family Type": "Single-Parent", 
+        "Year": ["2013-2017"],
+        "Measure Type": "Number",
+        "Variable": "Single-Parent Families",
+        "Family Type": "Single-Parent",
         "Child Relation": ["All", "Own Children", "No Own Children"]
       },
       "type": "object"
-    } 
+    }
   },
   "spot_checks": [
     {
@@ -197,14 +197,14 @@
         "Year":	"2011-2015",
         "Variable":	"Single-Parent Families",
         "Measure Type":	"Number",
-        "Family Type": "All", 
+        "Family Type": "All",
         "Child Relation": "All"
       },
       "expected": {
         "type": "$match",
         "number type": "int",
         "value": 514
-      } 
+      }
     },
     {
       "type": "$lookup",
@@ -213,14 +213,14 @@
         "Year":	"2006-2010",
         "Variable":	"Margins of Error",
         "Measure Type":	"Percent",
-        "Family Type": "Single-Parent", 
+        "Family Type": "Single-Parent",
         "Child Relation": "All"
       },
       "expected": {
         "type": "$match",
         "number type": "float",
         "value": 0.1
-      } 
+      }
     },
     {
       "type": "$lookup",
@@ -229,14 +229,14 @@
         "Year":	"2008-2012",
         "Variable":	"Margins of Error",
         "Measure Type":	"Number",
-        "Family Type": "Single-Parent", 
+        "Family Type": "Single-Parent",
         "Child Relation": "All"
       },
       "expected": {
         "type": "$match",
         "number type": "int",
         "value": 24
-      } 
+      }
     },
     {
       "type": "$lookup",
@@ -245,14 +245,14 @@
         "Year":	"2008-2012",
         "Variable":	"Single-Parent Families",
         "Measure Type":	"Percent",
-        "Family Type": "Single-Parent", 
+        "Family Type": "Single-Parent",
         "Child Relation": "All"
       },
       "expected": {
         "type": "$match",
         "number type": "float",
         "value": 20.97
-      } 
+      }
     },
     {
       "type": "$lookup",
@@ -261,14 +261,14 @@
         "Year":	"2006-2010",
         "Variable":	"Margins of Error",
         "Measure Type":	"Number",
-        "Family Type": "All", 
+        "Family Type": "All",
         "Child Relation": "No Own Children"
       },
       "expected": {
         "type": "$match",
         "number type": "float",
         "value": 114.50
-      } 
+      }
     },
     {
       "type": "$lookup",
@@ -277,14 +277,14 @@
         "Year":	"2009-2013",
         "Variable":	"Single-Parent Families",
         "Measure Type":	"Number",
-        "Family Type": "All", 
+        "Family Type": "All",
         "Child Relation": "No Own Children"
       },
       "expected": {
         "type": "$match",
         "number type": "int",
         "value": 289.00
-      } 
+      }
     },
     {
       "type": "$lookup",
@@ -293,14 +293,14 @@
         "Year":	"2007-2011",
         "Variable":	"Margins of Error",
         "Measure Type":	"Percent",
-        "Family Type": "Single-Parent", 
+        "Family Type": "Single-Parent",
         "Child Relation": "No Own Children"
       },
       "expected": {
         "type": "$match",
         "number type": "float",
         "value": 0.03
-      } 
+      }
     },
     {
       "type": "$lookup",
@@ -309,14 +309,14 @@
         "Year":	"2009-2013",
         "Variable":	"Single-Parent Families",
         "Measure Type":	"Percent",
-        "Family Type": "Single-Parent", 
+        "Family Type": "Single-Parent",
         "Child Relation": "No Own Children"
       },
       "expected": {
         "type": "$match",
         "number type": "float",
         "value": 9.40
-      } 
+      }
     },
     {
       "type": "$lookup",
@@ -325,14 +325,14 @@
         "Year":	"2010-2014",
         "Variable":	"Margins of Error",
         "Measure Type":	"Percent",
-        "Family Type": "Single-Parent", 
+        "Family Type": "Single-Parent",
         "Child Relation": "Own Children"
       },
       "expected": {
         "type": "$match",
         "number type": "float",
         "value": 0.06
-      } 
+      }
     },
     {
       "type": "$lookup",
@@ -341,14 +341,14 @@
         "Year":	"2011-2015",
         "Variable":	"Single-Parent Families",
         "Measure Type":	"Number",
-        "Family Type": "All", 
+        "Family Type": "All",
         "Child Relation": "Own Children"
       },
       "expected": {
         "type": "$match",
         "number type": "float",
         "value": 230
-      } 
+      }
     },
     {
       "type": "$lookup",
@@ -357,14 +357,14 @@
         "Year":	"2007-2011",
         "Variable":	"Margins of Error",
         "Measure Type":	"Number",
-        "Family Type": "Single-Parent", 
+        "Family Type": "Single-Parent",
         "Child Relation": "Own Children"
       },
       "expected": {
         "type": "$match",
         "number type": "float",
         "value": 92.44
-      } 
+      }
     },
     {
       "type": "$lookup",
@@ -373,29 +373,28 @@
         "Year":	"2010-2014",
         "Variable":	"Single-Parent Families",
         "Measure Type":	"Number",
-        "Family Type": "Single-Parent", 
+        "Family Type": "Single-Parent",
         "Child Relation": "Own Children"
       },
       "expected": {
         "type": "$match",
         "number type": "int",
         "value": 26
-      } 
+      }
     }
   ],
   "dimension_groups" : [
     {
       "Family Type": ["All"],
       "Measure Type": ["Number"],
-      "Variable": ["Single-Parent Families", "Margins of Error"], 
+      "Variable": ["Single-Parent Families", "Margins of Error"],
       "Child Relation": ["All", "Own Children", "No Own Children"]
     },
     {
       "Family Type": ["Single-Parent"],
       "Measure Type": ["Number", "Percent"],
-      "Variable": ["Single-Parent Families", "Margins of Error"], 
+      "Variable": ["Single-Parent Families", "Margins of Error"],
       "Child Relation": ["All", "Own Children", "No Own Children"]
     }
   ]
 }
-
