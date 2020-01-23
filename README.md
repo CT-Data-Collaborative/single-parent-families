@@ -4,6 +4,13 @@ Single-parent Families reports the number and percent of families that are heade
 
 Data Source: U.S. Census ACS 5-Year Estimates Table B11003
 
+
+### To update
+
+1. Download B11003 from data.census.gov and put it in `raw/` folder.
+1. Create Id2 column with a 10-digit code (Excel's RIGHT function, or pandas). Make sure first three column headers match older files for consistency.
+1. Run the update script in RStudio.
+
 ## License MIT
 
 ## Getting Setup

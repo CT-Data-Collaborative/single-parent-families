@@ -5,7 +5,7 @@ source('./scripts/acsHelpers.R')
 # Get geography object for CT and subcounty divisions
 acsdata <- getACSData(
   getCTGeos("town"),
-  yearList = 2010:2017,
+  yearList = 2010:2018,
   get_this_one = "B11003"
 )
 
@@ -36,7 +36,10 @@ for (data in acsdata) {
   )
   
   names(estimates)[names(estimates) == "HD01_VD01.Estimate; Total:"] <- "Total Families"
+  names(estimates)[names(estimates) == "B11003_001E.Estimate!!Total"] <- "Total Families"
+  
   names(estimates)[names(estimates) == "HD01_VD08.Estimate; Other family:"] <- "Total Single-Parent Families"
+  names(estimates)[names(estimates) == "B11003_008E.Estimate!!Total!!Other family"] <- "Total Single-Parent Families"
   
   estimates <- melt(
     estimates,
@@ -61,7 +64,10 @@ for (data in acsdata) {
   )
   
   names(moes)[names(moes) == "HD01_VD01.Estimate; Total:"] <- "Total Families"
+  names(moes)[names(moes) == "B11003_001E.Estimate!!Total"] <- "Total Families"
+  
   names(moes)[names(moes) == "HD01_VD08.Estimate; Other family:"] <- "Total Single-Parent Families"
+  names(moes)[names(moes) == "B11003_008E.Estimate!!Total!!Other family"] <- "Total Single-Parent Families"
   
   
   moes <- melt(
