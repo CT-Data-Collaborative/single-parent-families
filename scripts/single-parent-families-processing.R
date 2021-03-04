@@ -101,7 +101,7 @@ sp_families_long <- sp_families_long %>%
 # Write to File
 write.table(
   sp_families_long,
-  file.path(getwd(), "data", "single_parent_families_2018.csv"),
+  file.path(getwd(), "data", "single_parent_families_2019.csv"),
   sep = ",",
   row.names = F
 )
